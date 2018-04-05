@@ -14,6 +14,17 @@ void            direction(t_list *list, char t, int location_x, int location_y, 
         snake_add(list, t);
     while (e)
     {
+        /*
+        tmp_x = e->next_x;
+        tmp_y = e->next_y;
+
+        e->next_x = e->location_x;
+        e->next_y = e->location_y;
+        e->location_x = location_x;
+        e->location_y = location_y;
+        e = e->next;*/
+
+        
         if (list->first = e)
         {               
             e->next_x = e->location_x;
