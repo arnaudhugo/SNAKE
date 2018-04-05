@@ -12,7 +12,7 @@ void            direction(t_list *list, char t, int location_x, int location_y, 
 
     if (arr[location_x][location_y] == 'b')
     {
-        list_add(list, t);
+        snake_add(list, t);
         snake_in_map(list, col, arr);
     }
     while (e)

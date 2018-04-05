@@ -29,8 +29,8 @@ void    move(t_list *list, int col, int row, char arr[][col]);
 
 char    readline(void);
 
-int     list_init(t_list *list);
-int     list_add(t_list *list, char t);
+int     initialisation(t_list *list);
+int     snake_add(t_list *list, char t);
 int     count_x(char *c);
 int     count_y(char *c);
 // -------

@@ -4,8 +4,7 @@ int         main()
 {
     t_list  list;
 
-    list_init(&list);
-    //list_add(&list);
+    initialisation(&list);
 
     char *path;
     path = "maps/level1.txt";
@@ -44,9 +43,6 @@ int         main()
 
     // PUT SNAKE IN ARR
     snake_in_map(&list, col, arr);
-
-    // AFF MAP
-    //aff_map(col, row, arr);
 
     // JEU
     move(&list, col, row, arr);

@@ -1,6 +1,6 @@
 #include "../include/snake.h"
 
-int             list_init(t_list *list)
+int             initialisation(t_list *list)
 {
     t_snake     *snake;
 
@@ -20,7 +20,7 @@ int             list_init(t_list *list)
 }
 
 // Ajouter un element en fin de list
-int             list_add(t_list *list, char t)
+int             snake_add(t_list *list, char t)
 {
     t_snake     *snake;
     t_snake     *e;
