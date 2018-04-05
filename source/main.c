@@ -18,7 +18,7 @@ int         main()
     map = open(path, O_RDONLY);
     file = read(map, buf, sizeof(buf));
     col = count_x(buf);
-    row = count_y(buf) - 1;
+    row = count_y(buf);
     char arr[row][col];
     int x;
     int y;

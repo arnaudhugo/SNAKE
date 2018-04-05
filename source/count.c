@@ -24,6 +24,5 @@ int     count_y(char *c)
             count++;
         i++;
     }
-    count++;
     return count;
 }
