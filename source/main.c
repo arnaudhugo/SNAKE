@@ -4,10 +4,10 @@ int         main()
 {
     char    *path;
     t_list  list;
-    
-    path = "maps/level1.txt";
 
     init(&list);
+
+    path = "maps/level1.txt";
 
     // PUT MAP IN ARRAY
     int     map;
@@ -40,13 +40,14 @@ int         main()
             y = 0;
         }
     }
-
+    // ---
     // PUT SNAKE IN ARR
     snake_in_map(&list, col, arr);
+    //aff_map(col, row, arr);
 
     // JEU
     move(&list, col, row, arr);
-    
+
     list_free(&list);
     return (0);
 }

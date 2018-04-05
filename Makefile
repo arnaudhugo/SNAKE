@@ -2,9 +2,9 @@ CC		= gcc
 NAME	= snake
 SRC		= source/main.c			\
 		  source/snake.c		\
-		  source/count.c		\
 		  source/map.c			\
 		  source/move.c			\
+		  source/count.c		\
 		  source/readline.c		\
 		  libmy/my_putchar.c	\
 		  libmy/my_putstr.c

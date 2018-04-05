@@ -1,6 +1,6 @@
 #include "../include/snake.h"
 
-int             init(t_list *list)
+int    init(t_list *list)
 {
     t_snake     *snake;
 
@@ -14,23 +14,27 @@ int             init(t_list *list)
     snake->location_y = 13;
     snake->next_x = 4;
     snake->next_y = 12;
+    snake->prev = NULL;
+    snake->next = NULL;
     list->first = snake;
+    list->last = snake;
 
     return (0);
 }
 
-// Ajouter un element en fin de list
-int             snake_add(t_list *list, char t)
+// Ajouter un element
+int         snake_add(t_list *list, char t)
 {
-    t_snake     *snake;
-    t_snake     *e;
+    t_snake *snake;
+    t_snake *e;
 
     if (!list)
         return (-1);
     if ((snake = malloc(sizeof(*snake))) == NULL)
         return (-1);
-    
     list->size += 1;
+    
+    // Add fin
     snake->next = NULL;
     e = list->first;
 
@@ -41,6 +45,8 @@ int             snake_add(t_list *list, char t)
     }
     while (e->next != NULL) // Parcours de la list
         e = e->next;
+    snake->prev = e;
+
     snake->location_x = e->next_x;
     snake->location_y = e->next_y;
 
@@ -66,64 +72,45 @@ int             snake_add(t_list *list, char t)
     }
 
     e->next = snake;
+    list->last = snake;
+
     return (0);
 }
 
-// Supprimer un element de la list
+// Supprimer un element
 /*
 int         list_sub(t_list *list, int value)
 {
-    t_elem  *prev;
-    t_elem  *elem;
+    t_snake  *prev;
+    t_snake  *snake;
 
     prev = NULL;
-    elem = list->first;
-    while (elem)
+    snake = list->first;
+    while (snake)
     {
-        if (elem->value == value)
+        if (snake->value == value)
         {
             if (prev)
-                prev->next = elem->next;
+                prev->next = snake->next;
             else
-                list->first = elem->next;
-            free(elem);
+                list->first = snake->next;
+            free(snake);
             return (0);
         }
-        prev = elem;
-        elem = elem->next;
+        prev = snake;
+        snake = snake->next;
     }
     return (-1);
 }
 */
 
-void            snake_in_map(t_list *list, int col, char arr[][col])
-{
-    t_snake     *e;
-
-    e = list->first;
-
-    while (e)
-    {
-        // DEBUG
-        printf("-\nx = %d\n", e->location_x);
-        printf("y = %d\n", e->location_y);
-        printf("nx = %d\n", e->next_x);
-        printf("ny = %d\n", e->next_y);
-        // ---
-        arr[e->location_x][e->location_y] = 's';
-        arr[e->next_x][e->next_y] = ' ';
-        e = e->next;
-    }
-}
-
 // Vide la list
-void            list_free(t_list *list)
+void        list_free(t_list *list)
 {
-    t_snake     *next;
-    t_snake     *snake;
+    t_snake  *next;
+    t_snake  *snake;
 
     snake = list->first;
-
     while (snake)
     {
         next = snake->next;
