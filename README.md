@@ -12,4 +12,8 @@
     * Géneration bonus aléatoirement,
     * Génération malus aléatoirement,
     * Génération de la map avec les tailles,
-    * Voir pourquoi segfault au 2eme bonus (histoire des next_x/y, je pense),
+    * Voir pourquoi segfault au 2ème bonus (histoire des next_x/y, je pense),
+
+    * Découpe du code pour la norme,
+    * Vérification norme,
+    * SDL.
