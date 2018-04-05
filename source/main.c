@@ -12,13 +12,13 @@ int         main()
     // PUT MAP IN ARRAY
     int     map;
     ssize_t file;
-    char    buf[260];
+    char    buf[400];
     int     row;
     int     col;
     map = open(path, O_RDONLY);
     file = read(map, buf, sizeof(buf));
     col = count_x(buf);
-    row = count_y(buf);
+    row = count_y(buf) - 1;
     char arr[row][col];
     int x;
     int y;
