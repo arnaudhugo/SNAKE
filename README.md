@@ -5,7 +5,7 @@
     * Mort : mur (if 1),
     * Mort : direction opposer au sens du snake (if 's'),
     * Mort : sur lui même (if 's'),
-    * Menu des séléction,
+    * Menu des séléctions,
     * Menu de mort,
     * Eviter de pouvoir sortir de la map,
     * Téléportation quand on sort d'un côté à l'autre,
