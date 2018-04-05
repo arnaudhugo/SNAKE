@@ -1,6 +1,8 @@
 #include "../include/snake.h"
 
-void        get_map(char path)
+// NOT USE | A debug
+/*
+void        get_map(char *path, int row, int col)
 {
     char    arr[row][col];
     int     x;
@@ -27,6 +29,7 @@ void        get_map(char path)
     }
     return (arr);
 }
+*/
 
 void        aff_map(int col, int row, char arr[][col])
 {
