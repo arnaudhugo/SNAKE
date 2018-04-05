@@ -4,7 +4,7 @@ int         main()
 {
     t_list  list;
 
-    initialisation(&list);
+    init(&list);
 
     char *path;
     path = "maps/level1.txt";

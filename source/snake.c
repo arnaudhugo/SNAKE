@@ -1,6 +1,6 @@
 #include "../include/snake.h"
 
-int             initialisation(t_list *list)
+int             init(t_list *list)
 {
     t_snake     *snake;
 
