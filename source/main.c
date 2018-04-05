@@ -2,12 +2,12 @@
 
 int         main() 
 {
+    char    *path;
     t_list  list;
+    
+    path = "maps/level1.txt";
 
     init(&list);
-
-    char *path;
-    path = "maps/level1.txt";
 
     // PUT MAP IN ARRAY
     int     map;
@@ -19,27 +19,7 @@ int         main()
     file = read(map, buf, sizeof(buf));
     col = count_x(buf);
     row = count_y(buf);
-    char arr[row][col];
-    int x;
-    int y;
-    x = 0;
-    y = 0;
-    map = open(path, O_RDONLY);
-    while (file > 0)
-    {
-        file = read(map, buf, 1);
-        if (*buf != '\n')
-        {
-            arr[x][y] = *buf;
-            y++;
-        }
-        else
-        {
-            arr[x][y] = '\n';
-            x++;
-            y = 0;
-        }
-    }
+    get_map(path);
 
     // PUT SNAKE IN ARR
     snake_in_map(&list, col, arr);

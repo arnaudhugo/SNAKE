@@ -27,6 +27,8 @@ void    aff_map(int col, int row, char arr[][col]);
 void    list_free(t_list *list);
 void    move(t_list *list, int col, int row, char arr[][col]);
 
+void    get_map(char path);
+
 char    readline(void);
 
 int     init(t_list *list);

@@ -3,7 +3,7 @@ NAME	= snake
 SRC		= source/main.c			\
 		  source/snake.c		\
 		  source/count.c		\
-		  source/aff_map.c		\
+		  source/map.c			\
 		  source/move.c			\
 		  source/readline.c		\
 		  libmy/my_putchar.c	\
