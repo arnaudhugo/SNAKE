@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
+#include <stdio.h> // A SUPP
 #include <fcntl.h>
 
 typedef struct      s_snake
@@ -23,6 +23,7 @@ typedef struct      s_list
     t_snake         *last;
 }                   t_list;
 
+// SOURCE
 void    list_free(t_list *list);
 void    snake_in_map(t_list *list, int col, char arr[][col]);
 void    aff_map(int col, int row, char arr[][col]);
@@ -32,9 +33,9 @@ int     init(t_list *list);
 int     snake_add(t_list *list, char t);
 int     count_x(char *c);
 int     count_y(char *c);
-//int     list_sub(t_list *list, int value);
 
 char    readline(void);
+// -------
 
 // LIBMY
 void    my_putstr(char *str);
