@@ -43,7 +43,6 @@ int         main()
     // ---
     // PUT SNAKE IN ARR
     snake_in_map(&list, col, arr);
-    //aff_map(col, row, arr);
 
     // JEU
     move(&list, col, row, arr);
