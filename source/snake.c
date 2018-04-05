@@ -104,8 +104,12 @@ void            snake_in_map(t_list *list, int col, char arr[][col])
 
     while (e)
     {
-        printf("x = %d\n", e->location_x);
+        // DEBUG
+        printf("-\nx = %d\n", e->location_x);
         printf("y = %d\n", e->location_y);
+        printf("nx = %d\n", e->location_x);
+        printf("ny = %d\n", e->location_y);
+        // ---
         arr[e->location_x][e->location_y] = 's';
         arr[e->next_x][e->next_y] = ' ';
         e = e->next;
