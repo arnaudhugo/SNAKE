@@ -4,8 +4,6 @@ void            direction(t_list *list, char t, int location_x, int location_y, 
 {
     t_snake     *e;
 
-    //e = list->last;
-
     if (arr[location_x][location_y] == 'b')
         snake_add(list, t);
     e = list->last;
