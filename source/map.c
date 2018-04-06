@@ -64,3 +64,44 @@ void        aff_map(int col, int row, char arr[][col])
         i++;
     }
 }
+
+void        gen_sized_map(int p_row, int p_col)
+{
+    char    *path;
+    int     fd;
+    int     x;
+    int     y;
+    char    c;
+    char    e;
+    char    d;
+    char    t;
+    ssize_t file;
+    
+    x = 0;
+    y = 0;
+    c = '1';
+    e = ' ';
+    d = '\n';
+    path = "maps/gen_map.txt";
+    fd = open(path, O_RDWR | O_TRUNC);
+
+    while (x < p_row)
+    {
+        y = 0;
+        while (y < p_col)
+        {
+            if (x == 0 || x == (p_row - 1))
+                write(fd, &c, 1);
+            else
+            {
+                if (y == 0 || y == (p_col - 1))
+                    write(fd, &c, 1);
+                else
+                    write(fd, &e, 1);
+            }
+            y++;
+        }
+        write(fd, &d, 1);
+        x++;
+    }
+}

@@ -14,10 +14,10 @@ int            direction(t_list *list, char t, int location_x, int location_y, i
         my_putstr("Vous êtes mort.\n");
         return (1);
     }
-    if (location_x > (row - 2) || location_x < 0 || location_y > (col - 2) || location_y < 0)
+    if (location_x > (row - 1) || location_x < 0 || location_y > (col - 1) || location_y < 0)
     {
         my_putstr("Vous êtes mort.\n");
-        return (0);
+        return (1);
     }
     if (arr[location_x][location_y] == 'b')
     {

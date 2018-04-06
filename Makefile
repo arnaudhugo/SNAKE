@@ -1,11 +1,12 @@
 CC		= gcc
 NAME	= snake
 SRC		= source/main.c			\
+		  source/menu.c			\
 		  source/snake.c		\
 		  source/map.c			\
 		  source/move.c			\
 		  source/count.c		\
-		  source/rand.c		\
+		  source/rand.c			\
 		  source/readline.c		\
 		  libmy/my_putchar.c	\
 		  libmy/my_put_nbr.c	\

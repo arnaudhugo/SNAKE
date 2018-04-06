@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <time.h>
+#include <stdio.h>
 
 # define MY_RAND(MIN, MAX) ((random() % (MAX - MIN)) + MIN)
 
@@ -26,7 +27,9 @@ typedef struct      s_list
 }                   t_list;
 
 // SOURCE
+void    *menu();
 void    get_map(char *path, int col, char arr[][col]);
+void    gen_sized_map(int p_row, int p_col);
 void    list_free(t_list *list);
 void    snake_in_map(t_list *list, int col, char arr[][col]);
 void    aff_map(int col, int row, char arr[][col]);
