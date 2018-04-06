@@ -44,7 +44,7 @@ void            *menu()
     }
     else if (t == '5')
     {
-        my_putstr("\033c\n"); // Clear terminal
+        my_putstr("\033c\n");
         my_putstr("Goodbye !\n");
         list_free(&list);
         return (0);
