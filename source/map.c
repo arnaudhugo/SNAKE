@@ -1,5 +1,8 @@
 #include "../include/snake.h"
 
+void get_map()
+{}
+
 void            snake_in_map(t_list *list, int col, char arr[][col])
 {
     t_snake     *e;
