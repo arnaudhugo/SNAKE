@@ -1,20 +1,5 @@
 #include "../include/snake.h"
 
-
-/*
-char rand_bonus(int row, int col)
-{
-    int min;
-    char array[row][col];
-
-    srand(time(NULL));
-    min = 2;
-    row = rand() % ((row - 2) - min) + min;
-    col = rand() % ((col - 2) - min) + col;
-    array[row][col] = 'b';
-    return array[row][col];
-}*/
-
 int         main() 
 {
     char    *path;

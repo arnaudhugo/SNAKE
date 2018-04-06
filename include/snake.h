@@ -41,7 +41,6 @@ int     count_x(char *c);
 int     count_y(char *c);
 
 char    readline(void);
-char    rand_bonus(int i);
 // -------
 
 // LIBMY
