@@ -9,6 +9,7 @@ void        get_map(char *path, int col, char arr[][col])
     ssize_t file;
     t_list  list;
     
+
     x = 0;
     y = 0;
     map = open(path, O_RDONLY);

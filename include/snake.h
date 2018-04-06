@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <time.h>
-#include <stdio.h>
 
 # define MY_RAND(MIN, MAX) ((random() % (MAX - MIN)) + MIN)
 

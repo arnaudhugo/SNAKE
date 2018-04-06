@@ -38,7 +38,10 @@ void            *menu()
     else if (t == '3')
         path = "maps/level3.txt";
     else if (t == '4')
-        my_putstr("Coming soon\n");
+    {
+        gen_sized_map(14, 25);
+        path = "maps/gen_map.txt";
+    }
     else if (t == '5')
     {
         my_putstr("\033c\n"); // Clear terminal
