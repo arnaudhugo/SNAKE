@@ -5,6 +5,7 @@ SRC		= source/main.c			\
 		  source/map.c			\
 		  source/move.c			\
 		  source/count.c		\
+		  source/rand.c		\
 		  source/readline.c		\
 		  libmy/my_putchar.c	\
 		  libmy/my_putstr.c

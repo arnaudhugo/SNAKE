@@ -78,31 +78,26 @@ int         snake_add(t_list *list, char t)
 }
 
 // Supprimer un element
-/*
-int         list_sub(t_list *list, int value)
+int         snake_rm_last(t_list *list)
 {
-    t_snake  *prev;
     t_snake  *snake;
+    t_snake *e;
 
-    prev = NULL;
-    snake = list->first;
-    while (snake)
+    snake = list->last;
+    if (snake == NULL)
+        return (-1);
+    if (list->size > 1)
     {
-        if (snake->value == value)
-        {
-            if (prev)
-                prev->next = snake->next;
-            else
-                list->first = snake->next;
-            free(snake);
-            return (0);
-        }
-        prev = snake;
-        snake = snake->next;
+        e = snake->prev;
+        list->last = e;
+        list->size -= 1;
+        e->next = NULL;
+        free(snake);
     }
-    return (-1);
+    else
+        return (-1);
+    return (0);
 }
-*/
 
 // Vide la list
 void        list_free(t_list *list)

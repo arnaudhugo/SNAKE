@@ -1,27 +1,24 @@
 #include "../include/snake.h"
 
-char rand_bonus(int row, int col)
+void            direction(t_list *list, char t, int location_x, int location_y, int col, int row, char arr[][col])
 {
-    int min;
-    char array[row][col];
-
-    srand(time(NULL));
-    min = 2;
-    row = rand() % ((row - 2) - min) + min;
-    col = rand() % ((col - 2) - min) + col;
-    array[row][col] = 'b';
-    return array[row][col];
-}
-
-void            direction(t_list *list, char t, int location_x, int location_y, int col, char arr[][col])
-{
+    int         bx;
+    int         by;
     t_snake     *e;
-    char bonus;
+
+    bx = 0;
+    by = 0;
     
     if (arr[location_x][location_y] == 'b')
     {
-      bonus = rand_bonus(row, col);
-      snake_add(list, t);
+        put_rand_bonus(col, row, arr);
+        snake_add(list, t);
+    }
+    if (arr[location_x][location_y] == 'm')
+    {
+        put_rand_malus(col, row, arr);
+        if(!snake_rm_last(list))
+            return ;
     }
     e = list->last;
     while (e && list->first != e)
@@ -54,14 +51,19 @@ void            move(t_list *list, int col, int row, char arr[][col])
 
         //my_putstr("\033c\n");
         if (t == 'd')
-            direction(list, t, e->location_x, e->location_y + 1, col, arr);
+            direction(list, t, e->location_x, e->location_y + 1, col, row, arr);
         else if (t == 'a')
-            direction(list, t, e->location_x, e->location_y - 1, col, arr);
+            direction(list, t, e->location_x, e->location_y - 1, col, row, arr);
         else if (t == 'w')
-            direction(list, t, e->location_x - 1, e->location_y, col, arr);
+            direction(list, t, e->location_x - 1, e->location_y, col, row, arr);
         else if (t == 's')
-            direction(list, t, e->location_x + 1, e->location_y, col, arr);
+            direction(list, t, e->location_x + 1, e->location_y, col, row, arr);
         aff_map(col, row, arr);
+        /*
+        int v = list->size;
+        my_putstr("Votre score :");
+        my_putchar(list->size);
+        */
         t = readline();
     }
 }

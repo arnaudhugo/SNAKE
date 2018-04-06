@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <stdio.h> // A SUPP
 #include <fcntl.h>
+#include <time.h>
+
+# define MY_RAND(MIN, MAX) ((random() % (MAX - MIN)) + MIN)
 
 typedef struct      s_snake
 {
@@ -28,13 +31,17 @@ void    list_free(t_list *list);
 void    snake_in_map(t_list *list, int col, char arr[][col]);
 void    aff_map(int col, int row, char arr[][col]);
 void    move(t_list *list, int col, int row, char arr[][col]);
+void    put_rand_bonus(int col, int row, char arr[][col]);
+void    put_rand_malus(int col, int row, char arr[][col]);
 
 int     init(t_list *list);
 int     snake_add(t_list *list, char t);
+int     snake_rm_last(t_list *list);
 int     count_x(char *c);
 int     count_y(char *c);
 
 char    readline(void);
+char    rand_bonus(int i);
 // -------
 
 // LIBMY
