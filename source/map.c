@@ -1,7 +1,34 @@
 #include "../include/snake.h"
 
-void get_map()
-{}
+void        get_map(char *path, int col, char arr[][col])
+{
+    int     map;
+    int     x;
+    int     y;
+    char    buf[400];
+    ssize_t file;
+    t_list  list;
+    
+    x = 0;
+    y = 0;
+    map = open(path, O_RDONLY);
+
+    while (file > 0)
+    {
+        file = read(map, buf, 1);
+        if (*buf != '\n')
+        {
+            arr[x][y] = *buf;
+            y++;
+        }
+        else
+        {
+            arr[x][y] = '\n';
+            x++;
+            y = 0;
+        }
+    }
+}
 
 void            snake_in_map(t_list *list, int col, char arr[][col])
 {
@@ -11,12 +38,6 @@ void            snake_in_map(t_list *list, int col, char arr[][col])
 
     while (e)
     {
-        // DEBUG
-        /*        printf("-\nx = %d\n", e->location_x);
-        printf("y = %d\n", e->location_y);
-        printf("nx = %d\n", e->next_x);
-        printf("ny = %d\n", e->next_y);*/
-        // ---
         arr[e->location_x][e->location_y] = 's';
         arr[e->next_x][e->next_y] = ' ';
         e = e->next;

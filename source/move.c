@@ -14,10 +14,10 @@ int            direction(t_list *list, char t, int location_x, int location_y, i
         my_putstr("Vous êtes mort.\n");
         return (1);
     }
-    if (location_x > (row - 1) || location_x < 0 || location_y > (col - 2) || location_y < 0)
+    if (location_x > (row - 2) || location_x < 0 || location_y > (col - 2) || location_y < 0)
     {
         my_putstr("Vous êtes mort.\n");
-        return (1);
+        return (0);
     }
     if (arr[location_x][location_y] == 'b')
     {
@@ -53,6 +53,7 @@ int            direction(t_list *list, char t, int location_x, int location_y, i
 void            move(t_list *list, int col, int row, char arr[][col])
 {
     char        t;
+    int         v;
     t_snake     *e;
 
     t = '\0';
@@ -62,7 +63,7 @@ void            move(t_list *list, int col, int row, char arr[][col])
     {
         e = list->first;
 
-        //my_putstr("\033c\n");
+        my_putstr("\033c\n");
         if (t == 'd')
             if (direction(list, t, e->location_x, e->location_y + 1, col, row, arr))
                 return;
@@ -75,14 +76,10 @@ void            move(t_list *list, int col, int row, char arr[][col])
         if (t == 's')
             if (direction(list, t, e->location_x + 1, e->location_y, col, row, arr))
                 return;
-        //aff_map(col, row, arr);
-        
-        int v ;
         v = list->size;
         my_putstr("Votre score : ");
         my_put_nbr(v);
         my_putstr("\n");
-        
         t = readline();
     }
 }

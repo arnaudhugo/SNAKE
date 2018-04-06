@@ -1,6 +1,7 @@
 #include "../include/snake.h"
 
-int    init(t_list *list)
+// Initialisation
+int             init(t_list *list)
 {
     t_snake     *snake;
 
@@ -18,15 +19,14 @@ int    init(t_list *list)
     snake->next = NULL;
     list->first = snake;
     list->last = snake;
-
     return (0);
 }
 
 // Ajouter un element
-int         snake_add(t_list *list, char t)
+int             snake_add(t_list *list, char t)
 {
-    t_snake *snake;
-    t_snake *e;
+    t_snake     *snake;
+    t_snake     *e;
 
     if (!list)
         return (-1);
@@ -38,12 +38,12 @@ int         snake_add(t_list *list, char t)
     snake->next = NULL;
     e = list->first;
 
-    if (e == NULL) // check si list vide
+    if (e == NULL)
     {
         list->first = snake;
         return (0);
     }
-    while (e->next != NULL) // Parcours de la list
+    while (e->next != NULL)
         e = e->next;
     snake->prev = e;
 
@@ -73,15 +73,14 @@ int         snake_add(t_list *list, char t)
 
     e->next = snake;
     list->last = snake;
-
     return (0);
 }
 
 // Supprimer un element
-int         snake_rm_last(t_list *list)
+int             snake_rm_last(t_list *list)
 {
-    t_snake  *snake;
-    t_snake *e;
+    t_snake     *snake;
+    t_snake     *e;
 
     snake = list->last;
     if (snake == NULL)
@@ -100,10 +99,10 @@ int         snake_rm_last(t_list *list)
 }
 
 // Vide la list
-void        list_free(t_list *list)
+void            list_free(t_list *list)
 {
-    t_snake  *next;
-    t_snake  *snake;
+    t_snake     *next;
+    t_snake     *snake;
 
     snake = list->first;
     while (snake)

@@ -15,32 +15,19 @@ int         main()
     char    buf[400];
     int     row;
     int     col;
+
+    if (path == NULL)
+        path = "maps/level1.txt";
     map = open(path, O_RDONLY);
     file = read(map, buf, sizeof(buf));
     col = count_x(buf);
     row = count_y(buf);
-    char arr[row][col];
-    int x;
-    int y;
-    x = 0;
-    y = 0;
-    map = open(path, O_RDONLY);
-    while (file > 0)
-    {
-        file = read(map, buf, 1);
-        if (*buf != '\n')
-        {
-            arr[x][y] = *buf;
-            y++;
-        }
-        else
-        {
-            arr[x][y] = '\n';
-            x++;
-            y = 0;
-        }
-    }
+
+    char    arr[row][col];
+
+    get_map(path, col, arr);
     // ---
+
     // PUT SNAKE IN ARR
     snake_in_map(&list, col, arr);
 
@@ -48,7 +35,7 @@ int         main()
     put_rand_bonus(col, row, arr);
     put_rand_malus(col, row, arr);
 
-    // JEU
+    // GAME
     move(&list, col, row, arr);
 
     list_free(&list);

@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h> // A SUPP
 #include <fcntl.h>
 #include <time.h>
 
@@ -27,6 +26,7 @@ typedef struct      s_list
 }                   t_list;
 
 // SOURCE
+void    get_map(char *path, int col, char arr[][col]);
 void    list_free(t_list *list);
 void    snake_in_map(t_list *list, int col, char arr[][col]);
 void    aff_map(int col, int row, char arr[][col]);
