@@ -8,6 +8,7 @@ SRC		= source/main.c			\
 		  source/rand.c		\
 		  source/readline.c		\
 		  libmy/my_putchar.c	\
+		  libmy/my_put_nbr.c	\
 		  libmy/my_putstr.c
 OBJ	= $(SRC:%.c=%.o)
 RM	= rm -f

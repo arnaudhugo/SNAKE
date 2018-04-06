@@ -44,23 +44,9 @@ int         main()
     // PUT SNAKE IN ARR
     snake_in_map(&list, col, arr);
 
+    // PUT BONUS AND MALUS ON MAP
     put_rand_bonus(col, row, arr);
     put_rand_malus(col, row, arr);
-
-/*
-    int bx;
-    int by;
-
-    bx = 0;
-    by = 0;
-
-    while (arr[bx][by] == '1' || arr[bx][by] == 's')
-    {
-        srandom(time(NULL));
-        bx = MY_RAND(1, row - 2);
-        by = MY_RAND(1, col - 2);
-    }
-    arr[bx][by] = 'b';*/
 
     // JEU
     move(&list, col, row, arr);

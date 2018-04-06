@@ -46,6 +46,7 @@ char    readline(void);
 // LIBMY
 void    my_putstr(char *str);
 void    my_putchar(char c);
+void	my_put_nbr(int n);
 // -------
 
 #endif
