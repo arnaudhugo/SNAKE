@@ -46,7 +46,6 @@ int            direction(t_list *list, char t, int location_x, int location_y, i
     e->location_x = location_x;
     e->location_y = location_y;
     snake_in_map(list, col, arr);
-    aff_map(col, row, arr);
     return (0);
 }
 
@@ -58,7 +57,6 @@ void            move(t_list *list, int col, int row, char arr[][col])
 
     t = '\0';
 
-    aff_map(col, row, arr);
     while (t != 'q')
     {
         e = list->first;
@@ -76,6 +74,7 @@ void            move(t_list *list, int col, int row, char arr[][col])
         if (t == 's')
             if (direction(list, t, e->location_x + 1, e->location_y, col, row, arr))
                 return;
+        aff_map(col, row, arr);
         v = list->size;
         my_putstr("Votre score : ");
         my_put_nbr(v);
